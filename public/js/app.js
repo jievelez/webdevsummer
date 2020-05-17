@@ -2136,6 +2136,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38645,7 +38648,6 @@ var render = function() {
             "button",
             {
               staticClass: "btn btn-success btn-block",
-              attrs: { onclick: "alert('Hello')" },
               on: { click: _vm.createModal }
             },
             [_vm._v("Add New Person")]
@@ -38914,7 +38916,7 @@ var render = function() {
                           _vm._v("Birth Day")
                         ]),
                         _vm._v(" "),
-                        _c("select", {
+                        _c("input", {
                           directives: [
                             {
                               name: "model",
@@ -38924,24 +38926,14 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          attrs: { name: "birthDay", id: "birthDay" },
+                          attrs: { type: "text", id: "birthDay" },
+                          domProps: { value: _vm.sap.birthDay },
                           on: {
-                            change: function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.$set(
-                                _vm.sap,
-                                "birthDay",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              )
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.sap, "birthDay", $event.target.value)
                             }
                           }
                         })
@@ -38952,7 +38944,7 @@ var render = function() {
                           _vm._v("Birth Month")
                         ]),
                         _vm._v(" "),
-                        _c("select", {
+                        _c("input", {
                           directives: [
                             {
                               name: "model",
@@ -38962,23 +38954,17 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          attrs: { name: "birthMonth", id: "birthMonth" },
+                          attrs: { type: "text", id: "birthMonth" },
+                          domProps: { value: _vm.sap.birthMonth },
                           on: {
-                            change: function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
                               _vm.$set(
                                 _vm.sap,
                                 "birthMonth",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
+                                $event.target.value
                               )
                             }
                           }
@@ -38990,7 +38976,7 @@ var render = function() {
                           _vm._v("Birth Year")
                         ]),
                         _vm._v(" "),
-                        _c("select", {
+                        _c("input", {
                           directives: [
                             {
                               name: "model",
@@ -39000,23 +38986,17 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          attrs: { name: "birthYear", id: "birthYear" },
+                          attrs: { type: "text", id: "birthYear" },
+                          domProps: { value: _vm.sap.birthYear },
                           on: {
-                            change: function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
                               _vm.$set(
                                 _vm.sap,
                                 "birthYear",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
+                                $event.target.value
                               )
                             }
                           }

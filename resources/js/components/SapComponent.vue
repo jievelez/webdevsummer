@@ -5,7 +5,7 @@
     </div>
 
     <div v-else>
-      <button onclick="alert('Hello')" @click="createModal" class="btn btn-success btn-block">Add New Person</button>
+      <button @click="createModal" class="btn btn-success btn-block">Add New Person</button>
       <table class="table" v-if="saps">
         <thead>
           <tr>
@@ -84,18 +84,21 @@
               </div>
               <div class="form-group">
                 <label for="birthDay">Birth Day</label>
-                <select v-model="sap.birthDay" name="birthDay" id="birthDay" class="form-control">
-                </select>
+                <!--- <select v-model="sap.birthDay" name="birthDay" id="birthDay" class="form-control">
+                </select> -->
+                <input v-model="sap.birthDay" type="text" id="birthDay" class="form-control" />
               </div>
               <div class="form-group">
                 <label for="birthMonth">Birth Month</label>
-                <select v-model="sap.birthMonth" name="birthMonth" id="birthMonth" class="form-control">
-                </select>
+                <!--- <select v-model="sap.birthMonth" name="birthMonth" id="birthMonth" class="form-control">
+                </select> -->
+                <input v-model="sap.birthMonth" type="text" id="birthMonth" class="form-control" />
               </div>
               <div class="form-group">
                 <label for="birthYear">Birth Year</label>
-                <select v-model="sap.birthYear" name="birthYear" id="birthYear" class="form-control">
-                </select>
+                <!--- <select v-model="sap.birthYear" name="birthYear" id="birthYear" class="form-control">
+                </select> -->
+                <input v-model="sap.birthYear" type="text" id="birthYear" class="form-control" />
               </div>
               <div class="form-group">
                 <label for="recevied">Received</label>
