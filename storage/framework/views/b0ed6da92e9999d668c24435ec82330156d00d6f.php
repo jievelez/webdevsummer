@@ -18,14 +18,22 @@
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    <style>
+        body {
+                background-color: #fff;
+                background-image: url('img/dswd.jpg');
+                background-size: cover;
+            }
+    </style>
 </head>
-<body>
+<body >
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
                     SAP Tracker
                 </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php echo e(__('Toggle navigation')); ?>">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -74,7 +82,9 @@
         </nav>
 
         <main class="py-4">
-            <?php echo $__env->yieldContent('content'); ?>
+            <div style="margin-top: 155px;">
+                <?php echo $__env->yieldContent('content'); ?>
+            </div>
         </main>
     </div>
 </body>

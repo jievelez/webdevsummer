@@ -13,6 +13,8 @@
         <style>
             html, body {
                 background-color: #fff;
+                background-image: url('img/dswd.jpg');
+                background-size: 100% 100%;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -62,24 +64,27 @@
                 margin-bottom: 30px;
             }
         </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     </head>
-    <body>
+    <body >
+        
         <div class="flex-center position-ref full-height">
-            <?php if(Route::has('login')): ?>
-                <div class="top-right links">
-                    <?php if(auth()->guard()->check()): ?>
-                        <a href="<?php echo e(url('/home')); ?>">Home</a>
-                    <?php else: ?>
-                        <a href="<?php echo e(route('login')); ?>">Login</a>
 
-                        <?php if(Route::has('register')): ?>
-                            <a href="<?php echo e(route('register')); ?>">Register</a>
+             <?php if(Route::has('login')): ?>
+                    <div class="top-right links">
+                        <?php if(auth()->guard()->check()): ?>
+                            <a href="<?php echo e(url('/home')); ?>">Home</a>
+                        <?php else: ?>
+                            <a href="<?php echo e(route('login')); ?>">Login</a>
+
+                            <?php if(Route::has('register')): ?>
+                                <a href="<?php echo e(route('register')); ?>">Register</a>
+                            <?php endif; ?>
                         <?php endif; ?>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?>
+                    </div>
+                <?php endif; ?>
 
-            <div class="content">
+            <!-- <div class="content">
                 <div class="title m-b-md">
                     SAP Tracker
                 </div>
@@ -94,7 +99,9 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
-            </div>
+            </div> -->
+
+            
         </div>
     </body>
 </html>
